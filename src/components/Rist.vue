@@ -4,12 +4,12 @@
       <table border="1">
         <tr>
           <th>銘柄</th>
-          <th>概要</th>
+          <th>最終取引価格</th>
           <th>詳細</th>
         </tr>
         <tr v-for="(data,index) in cryptlist" :key="index" >
           <td>{{data.symbol}}</td>
-          <td>仮想通貨アプリ情報サイト</td>
+          <td>{{data.last}}</td>
           <td>
             <button @click="button">詳細ページ</button>
             </td>
@@ -38,8 +38,8 @@ export default {
       'https://api.coin.z.com/public/v1/ticker'
 
     );
-    console.log(item.data)
-    const cryptData =item.data;
+    console.log(item.data.data)
+    const cryptData =item.data.data;
     this.cryptlist =cryptData;
   },
   methods: {
