@@ -1,20 +1,14 @@
 <template>
-  <div id="Rist">
-    <div class="Rist1">
-      <table border="1">
-        <tr>
-          <th>銘柄</th>
-          <th>概要</th>
-          <th>詳細</th>
-        </tr>
-        <tr v-for="(data,index) in cryptlist" :key="index" >
-          <td>{{data.symbol}}</td>
-          <td>仮想通貨アプリ情報サイト</td>
-          <td>
-            <button @click="button">詳細ページ</button>
-            </td>
-        </tr>
-      </table>
+  <div class="about">
+    <div class="detail">
+      <h1 class="detail-title"> {{data.symbol}}の詳細情報</h1>
+        <ul>
+          <li>取引所ステータス:{{data.status}}</li>
+          <li>約定価格:{{data.price}}</li>
+          <li>高値{{data.high}}</li>
+          <li>安値{{data.low}}</li>
+          <li>終値{{data.close}}</li>
+        </ul>
     </div>
   </div>
 </template>
@@ -27,7 +21,14 @@ export default {
   data() {
     return{
       cryptlist: [
-        { symbol:"test"}
+        { symbol:"",
+        status:"",
+        price:"",
+        hight:"",
+        low:"",
+        close:""
+
+        },
       ]
       
 
@@ -54,10 +55,10 @@ export default {
 
 
 <style scoped>
-.Rist1{
+.detail{
   background-color: rgb(243, 214, 242);
 }
-.Rist1 th,td{
+.detail li{
   color: black;
   font-size: 20px;
 }
@@ -66,12 +67,7 @@ export default {
   color: black;
 
 }
-.Rist1 button{
-  background-color: blueviolet;
-  border: none;
-  border-radius: 3px;
 
 
-}
 </style>
 

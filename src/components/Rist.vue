@@ -11,7 +11,7 @@
           <td>{{data.symbol}}</td>
           <td>{{data.last}}</td>
           <td>
-            <button @click="button">詳細ページ</button>
+            <button @click="button">about</button>
             </td>
         </tr>
       </table>
