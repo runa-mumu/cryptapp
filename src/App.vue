@@ -1,12 +1,20 @@
 <template>
-<div id="app">
-    <div class="logo">
-        <img src="./assets/logo.jpg" alt>
-        </div>
-        <Rist></Rist>
-        <Rogout></Rogout>
-        </div>
+  <div id="app">
+    <Header />
+     <img src="./assets/logo.jpg" alt>
+    <router-view />
+  </div>
 </template>
+
+<script>
+import Header from "./components/Header.vue";
+export default {
+  components: {
+    Header
+  }
+};
+</script>
+
 
 <style>
 html, body, div, span, object, iframe,
@@ -104,29 +112,10 @@ input, select {
     vertical-align:middle;
 }
 
-html {
-  background-color: #fafbfc;
-}
-* {
-  color: white;
-  font-family: "Noto Sans JP";
-}
-
-.logo {
+#app img {
     padding: 20px 30px;
 }
 
 
 </style>
 
-<script>
-import Rist from "./components/Rist";
-import Rogout from "./components/Rogout";
-
-
-export default {
-    components:{
-        Rist,Rogout
-    }
-};
-</script>

@@ -10,7 +10,9 @@
           <li>終値{{data.close}}</li>
         </ul>
     </div>
+    <button>Homeへ</button>
   </div>
+
 </template>
 
 <script>
@@ -45,7 +47,7 @@ export default {
   },
   methods: {
     button(){
-      this.$router.push('../views/About.vue')
+      this.$router.push('../views/Home.vue')
 
     }
   }
@@ -55,18 +57,15 @@ export default {
 
 
 <style scoped>
-.detail{
+.about{
   background-color: rgb(243, 214, 242);
 }
-.detail li{
+.detail {
   color: black;
   font-size: 20px;
 }
-.Rist1 td{
-  padding: 10px 10px;
-  color: black;
 
-}
+
 
 
 </style>
