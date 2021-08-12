@@ -19,7 +19,7 @@
 import axios from "axios";
 
 export default {
-  props: ["CryptoCurrency2"],
+  props: ["CryptoCurrency"],
   data() {
     return{
       cryptlist2: [
@@ -44,7 +44,7 @@ export default {
     axios.defaults.withCredentials = true;
     console.log(item2.data.data)
     const cryptData2 =item2.data.data;
-    this.cryptlist =cryptData2;
+    this.cryptlist2 =cryptData2;
     this.name = item2.data.data[0].symbol;
     this.status = item2.data.data[0].status;
     this.price = item2.data.data[0].price;

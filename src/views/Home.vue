@@ -11,7 +11,7 @@
           <td>{{data.symbol}}</td>
           <td>{{data.last}}</td>
           <td>
-            <button @click="button">about</button>
+            <button @click= "$router.push ({ name: 'About' })">about</button>
             </td>
         </tr>
       </table>

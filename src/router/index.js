@@ -12,7 +12,7 @@ const routes = [
     component: Home
   },
   {
-    path: '/about/:CryptoCurrency2',
+    path: '/about',
     name: 'About',
     component: About,
     props: true,
