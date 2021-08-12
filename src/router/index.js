@@ -3,7 +3,6 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 
-
 Vue.use(VueRouter)
 
 const routes = [
@@ -13,17 +12,17 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
+    path: '/about/:CryptoCurrency2',
     name: 'About',
     component: About,
-    props:true,
-  }
-]
+    props: true,
+  },
+];
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
 export default router;

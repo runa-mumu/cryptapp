@@ -72,6 +72,7 @@ export default {
   background-color: blueviolet;
   border: none;
   border-radius: 3px;
+  color: white;
 
 
 }
