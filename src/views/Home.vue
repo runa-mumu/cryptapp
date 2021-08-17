@@ -11,7 +11,7 @@
           <td>{{data.symbol}}</td>
           <td>{{data.last}}</td>
           <td>
-            <button @click= "$router.push ({ name: 'About' })">about</button>
+            <button @click= "$router.push ({ name: 'About',params: { CryptoCurrency:CryptoCurrency} })">about</button>
             </td>
         </tr>
       </table>
@@ -30,9 +30,9 @@ export default {
         { symbol:""}
       ]
       
-
     }; 
   },
+      
   async created(){
     const item = await axios.get(
       "/public/v1/ticker",{

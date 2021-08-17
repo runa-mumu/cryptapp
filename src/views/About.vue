@@ -1,15 +1,14 @@
 <template>
-  <div id="about">
-    <div class="detail">
-      <p>テスト</p>
-      <h1 class="detail-title"> {{ data.symbol}}の詳細情報</h1>
-        <ul>
-          <li>取引所ステータス:{{data.status}}</li>
-          <li>約定価格:{{data.price}}</li>
-          <li>高値{{data.high}}</li>
-          <li>安値{{data.low}}</li>
-          <li>終値{{data.close}}</li>
-        </ul>
+ <div class="about">
+   <div class="detail">
+     <h1 class="detail-title"> {{ cryptlist.symbol }}の詳細情報</h1>
+     <ul>
+       <li>取引所ステータス:{{ status }}</li>
+       <li>約定価格:{{ price }}</li>
+       <li>高値:{{ high }}</li>
+       <li>安値:{{ low }}</li>
+       <li>終値:{{ close }}</li>
+      </ul>
     </div>
     <button>Homeへ</button>
   </div>
@@ -22,8 +21,8 @@ export default {
   props: ["CryptoCurrency"],
   data() {
     return{
-      cryptlist2: [
-        { name:"",
+      cryptlist: [
+        { symbol:"テスト",
         status:"",
         price:"",
         hight:"",
@@ -36,21 +35,21 @@ export default {
     }; 
   },
   async created(){
-    const item2= await axios.get(
-      `public/public/v1/ticker?symbol=${this.CryptoCurrency2}`
+    const item= await axios.get(
+      `/public/v1/ticker?symbol=${this.CryptoCurrency}`
       ,
 
     );
     axios.defaults.withCredentials = true;
-    console.log(item2.data.data)
-    const cryptData2 =item2.data.data;
-    this.cryptlist2 =cryptData2;
-    this.name = item2.data.data[0].symbol;
-    this.status = item2.data.data[0].status;
-    this.price = item2.data.data[0].price;
-    this.high = item2.data.data[0].high;
-    this.low = item2.data.data[0].low;
-    this.close = item2.data.data[0].close;
+    console.log(item.data.data)
+    const cryptData =item.data.data;
+    this.cryptlist =cryptData;
+    this.name = item.data.data.symbol;
+    this.status = item.data.data.status;
+    this.price = item.data.data.price;
+    this.high = item.data.data.high;
+    this.low = item.data.data.low;
+    this.close = item.data.data.close;
     },
   methods: {
     button(){
@@ -64,16 +63,13 @@ export default {
 
 
 <style scoped>
-.detail{
+.detail {
   background-color: rgb(243, 214, 242);
 }
 .detail h1{
   color: black;
   font-size: 20px;
 }
-
-
-
 
 </style>
 
