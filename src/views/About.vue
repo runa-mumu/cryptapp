@@ -1,16 +1,16 @@
 <template>
  <div class="about">
    <div class="detail">
-     <h1 class="detail-title"> {{ cryptlist.symbol }}の詳細情報</h1>
+     <h1 class="detail-title"> {{ cryptlist[0].symbol }}の詳細情報</h1>
      <ul>
        <li>取引所ステータス:{{ status }}</li>
-       <li>約定価格:{{ price }}</li>
-       <li>高値:{{ high }}</li>
-       <li>安値:{{ low }}</li>
-       <li>終値:{{ close }}</li>
+       <li>約定価格:{{ cryptlist[0].price }}</li>
+       <li>高値:{{ cryptlist[0].high }}</li>
+       <li>安値:{{ cryptlist[0].low }}</li>
+       <li>終値:{{ cryptlist[0].close }}</li>
       </ul>
     </div>
-    <button>Homeへ</button>
+    <button @click= "$router.push ({ name: 'Home',params: { CryptoCurrency:CryptoCurrency} })">Homeへ</button>
   </div>
 </template>
 
@@ -22,7 +22,7 @@ export default {
   data() {
     return{
       cryptlist: [
-        { symbol:"テスト",
+        { symbol:"",
         status:"",
         price:"",
         hight:"",
@@ -44,12 +44,12 @@ export default {
     console.log(item.data.data)
     const cryptData =item.data.data;
     this.cryptlist =cryptData;
-    this.name = item.data.data.symbol;
-    this.status = item.data.data.status;
-    this.price = item.data.data.price;
+    this.symbol = item.data.data.symbol;
+    this.status = item.data.status;
+    this.price = item.data.data[0].dataprice;
     this.high = item.data.data.high;
-    this.low = item.data.data.low;
-    this.close = item.data.data.close;
+    this.low = item.data.data[0].low;
+    this.close = item.data.data[0].close;
     },
   methods: {
     button(){

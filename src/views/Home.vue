@@ -11,7 +11,9 @@
           <td>{{data.symbol}}</td>
           <td>{{data.last}}</td>
           <td>
-            <button @click= "$router.push ({ name: 'About',params: { CryptoCurrency:CryptoCurrency} })">about</button>
+            <router-link
+                :to="{ name: 'About', params: {CryptoCurrency: data.symbol } }"
+                >about</router-link>
             </td>
         </tr>
       </table>
