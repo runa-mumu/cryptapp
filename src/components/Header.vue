@@ -11,9 +11,12 @@
 header {
   background-color: white;
   color: black;
+  
 }
 .center h1 {
-  padding: 20px 30px;
+  text-align: center;
+  line-height: 40px;
+
   size: 400px;
   color: black;
 }
@@ -26,9 +29,7 @@ html {
   font-family: "Noto Sans JP";
 }
 
-.logo {
-    padding: 20px 30px;
-}
+
 
 
 </style>

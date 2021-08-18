@@ -3,11 +3,12 @@
    <div class="detail">
      <h1 class="detail-title"> {{ cryptlist[0].symbol }}の詳細情報</h1>
      <ul>
-       <li>取引所ステータス:{{ status }}</li>
-       <li>約定価格:{{ cryptlist[0].price }}</li>
+       <li>売り注文情報:{{ cryptlist[0].ask }}</li>
+       <li>買い注文情報:{{ cryptlist[0].bid }}</li>
        <li>高値:{{ cryptlist[0].high }}</li>
        <li>安値:{{ cryptlist[0].low }}</li>
-       <li>終値:{{ cryptlist[0].close }}</li>
+       <li>終値:{{ cryptlist[0].last }}</li>
+       <li>取引量:{{ cryptlist[0].volume }}</li>
       </ul>
     </div>
     <button @click= "$router.push ({ name: 'Home',params: { CryptoCurrency:CryptoCurrency} })">Homeへ</button>
@@ -23,11 +24,13 @@ export default {
     return{
       cryptlist: [
         { symbol:"",
-        status:"",
+        asks:"",
+        bid:"",
         price:"",
         hight:"",
         low:"",
-        close:""
+        close:"",
+        volume:""
 
         },
       ]
@@ -45,11 +48,13 @@ export default {
     const cryptData =item.data.data;
     this.cryptlist =cryptData;
     this.symbol = item.data.data.symbol;
-    this.status = item.data.status;
-    this.price = item.data.data[0].dataprice;
-    this.high = item.data.data.high;
+    this.asks = item.data.data[0].asks;
+    this.bid = item.data.data[0].bid;
+    this.price = item.data.data[0].price;
+    this.high = item.data.data[0].high;
     this.low = item.data.data[0].low;
-    this.close = item.data.data[0].close;
+    this.close = item.data.data[0].last;
+    this.volume = item.data.data[0].volume;
     },
   methods: {
     button(){
@@ -63,12 +68,28 @@ export default {
 
 
 <style scoped>
-.detail {
-  background-color: rgb(243, 214, 242);
-}
+
+
+
 .detail h1{
   color: black;
   font-size: 20px;
+}
+
+ul, ol {
+  padding: 0;
+  position: relative;
+}
+
+ul li, ol li {
+  color: black;
+  border-left: solid 8px rgb(228, 103, 186);/*左側の線*/
+  background: whitesmoke;/*背景色*/
+  margin-bottom: 5px;/*下のバーとの余白*/
+  line-height: 1.5;
+  border-radius: 0 15px 15px 0;/*右側の角だけ丸く*/
+  padding: 0.5em;
+  list-style-type: none!important;
 }
 
 </style>

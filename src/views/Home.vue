@@ -11,10 +11,9 @@
           <td>{{data.symbol}}</td>
           <td>{{data.last}}</td>
           <td>
-            <router-link
-                :to="{ name: 'About', params: {CryptoCurrency: data.symbol } }"
-                >about</router-link>
-            </td>
+            <router-link 
+            :to = "{ name: 'About', params: {CryptoCurrency: data.symbol } }" >about</router-link>
+          </td>
         </tr>
       </table>
     </div>
@@ -58,6 +57,26 @@ export default {
 
 
 <style scoped>
+table{
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+table tr{
+  border-bottom: solid 1px #eee;
+  cursor: pointer;
+}
+
+table tr:hover{
+  background-color: #d4f0fd;
+}
+
+table th,table td{
+  text-align: center;
+  width: 25%;
+  padding: 15px 0;
+}
 .Rist1{
   background-color: rgb(243, 214, 242);
 }
@@ -70,12 +89,9 @@ export default {
   color: black;
 
 }
-.Rist1 button{
-  background-color: blueviolet;
-  border: none;
-  border-radius: 3px;
-  color: white;
 
 
-}
+
+
+
 </style>

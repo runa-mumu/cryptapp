@@ -113,8 +113,12 @@ input, select {
 }
 
 #app img {
-    padding: 20px 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
 }
+
 
 
 </style>
