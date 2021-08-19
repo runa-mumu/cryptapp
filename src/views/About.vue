@@ -11,7 +11,9 @@
        <li>取引量:{{ cryptlist[0].volume }}</li>
       </ul>
     </div>
-    <button @click= "$router.push ({ name: 'Home',params: { CryptoCurrency:CryptoCurrency} })">Homeへ</button>
+    <div class="Home">
+      <button @click= "$router.push ({ name: 'Home',params: { CryptoCurrency:CryptoCurrency} })">Homeへ</button>
+    </div>
   </div>
 </template>
 
@@ -74,6 +76,7 @@ export default {
 .detail h1{
   color: black;
   font-size: 20px;
+  padding: 15px;
 }
 
 ul, ol {
@@ -90,6 +93,23 @@ ul li, ol li {
   border-radius: 0 15px 15px 0;/*右側の角だけ丸く*/
   padding: 0.5em;
   list-style-type: none!important;
+}
+.Home{
+  margin: 0 auto;
+  text-align: center;  
+  max-width: 200px;
+  
+}
+
+.Home button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+  background: #fff;
+  position: relative;
 }
 
 </style>
