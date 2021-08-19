@@ -1,0 +1,6 @@
+[[redirects]]
+  from = "/posts"
+  to = "/blogs/"
+  status = 301
+  force = true
+  headers = {X-From = "Netlify"}
