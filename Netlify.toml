@@ -1,6 +1,0 @@
-[[[redirects]]
-  from = "/public"
-  to = "https://api.coin.z.com/v1/status?=:q"
-  status = 200
-  force = true
-  query = {q = ":q"}

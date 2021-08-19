@@ -36,7 +36,7 @@ export default {
       
   async created(){
     const item = await axios.get(
-      "/public/v1/ticker",{
+      "https://api.coin.z.com/public/v1/ticker",{
         withCredentials: true }
 
     );
