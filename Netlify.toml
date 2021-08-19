@@ -1,6 +1,6 @@
-[[redirects]]
-  from = "/posts"
-  to = "/blogs/"
-  status = 301
+[[[redirects]]
+  from = "/search"
+  to = "https://api.coin.z.com/search?q=:q"
+  status = 200
   force = true
-  headers = {X-From = "Netlify"}
+  query = {q = ":q"}
