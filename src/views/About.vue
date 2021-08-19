@@ -41,7 +41,7 @@ export default {
   },
   async created(){
     const item= await axios.get(
-      `https://api.coin.z.com/public/v1/ticker?symbol=${this.CryptoCurrency}`
+      `public/v1/ticker?symbol=${this.CryptoCurrency}`
       ,
 
     );
