@@ -1,6 +1,6 @@
 [[[redirects]]
-  from = "/search"
-  to = "https://api.coin.z.com/search?q=:q"
+  from = "/public"
+  to = "https://api.coin.z.com//v1/status?=:q"
   status = 200
   force = true
   query = {q = ":q"}
