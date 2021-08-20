@@ -36,10 +36,10 @@ export default {
       
   async created(){
     const item = await axios.get(
-      "public/v1/ticker",{
+      "https://api.coin.z.com/public/v1/ticker",{
         withCredentials: true }
 
-    );
+    ); 
     axios.defaults.withCredentials = true;
     console.log(item.data.data)
     const cryptData =item.data.data;
