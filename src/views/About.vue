@@ -41,9 +41,17 @@ export default {
   },
   async created(){
     const item= await axios.get(
-      `/public/v1/ticker?symbol=${this.CryptoCurrency}`
+      `https://api.coin.z.com/public/v1/ticker?symbol=${this.CryptoCurrency}`
       ,
-    );
+      this.$axios
+  .get("URL")
+  .then((response) => {
+    console.log(response)
+  })
+  .catch((error) => {
+    console.log(error)
+  }
+    ));
     axios.defaults.withCredentials = true;
     console.log(item.data.data)
     const cryptData =item.data.data;
